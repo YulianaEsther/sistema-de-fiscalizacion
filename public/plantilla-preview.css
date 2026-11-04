@@ -1,0 +1,37 @@
+#vista.docx-rendered {
+ max-width: none;
+ overflow-x: auto;
+ padding: 24px;
+ background: #e8edf3;
+}
+
+#vista.docx-rendered .docx-wrapper {
+ padding: 0 !important;
+ background: transparent !important;
+}
+
+#vista.docx-rendered .docx {
+ margin: 0 auto 20px;
+ box-shadow: 0 2px 12px rgb(15 23 42 / 18%);
+}
+
+#vista.docx-rendered .docx article > table:last-of-type ~ p:empty {
+ display: none;
+}
+
+@media print {
+ #vista.docx-rendered {
+  padding: 0 !important;
+  background: #fff !important;
+ }
+
+ #vista.docx-rendered .docx-wrapper {
+  padding: 0 !important;
+  background: #fff !important;
+ }
+
+ #vista.docx-rendered .docx {
+  margin: 0 auto !important;
+  box-shadow: none !important;
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sisfis_yuliana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@xmldom/xmldom": "^0.9.12",
+    "docx": "^9.15.2",
+    "docx-preview": "^0.4.1",
+    "express": "^5.3.0",
+    "jszip": "^3.10.2"
+  }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="theme-color" content="#102c50">
+ <title>SISFIS | Informes de fiscalización</title>
+ <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="plantilla-preview.css">
+</head>
+<body>
+ <header class="encabezado">
+  <div class="encabezado-contenido">
+   <span class="marca">SISFIS</span>
+   <h1>Sistema de Informes de Fiscalización</h1>
+   <p>Registro y elaboración de informes operativos</p>
+  </div>
+ </header>
+ <nav class="navbar" aria-label="Navegación principal">
+  <a href="#inicio">Inicio</a>
+  <a href="#registro">Elaborar informe</a>
+  <a href="#informes">Informes registrados</a>
+  <a href="#vista-previa">Vista previa</a>
+ </nav>
+ <main class="contenedor" id="inicio">
+  <section class="card introduccion">
+   <p class="eyebrow">GESTIÓN DOCUMENTAL</p>
+   <h2>Informes de fiscalización</h2>
+   <p>Complete los datos y genere una vista previa. Después podrá guardar el informe como borrador o confirmar y descargar el documento Word.</p>
+   <div class="alert alert-warning"><strong>Uso académico:</strong> verifique la vigencia, pertinencia y exactitud de la normativa y de los datos antes de emitir o utilizar un informe oficial.</div>
+  </section>
+
+  <section class="card" id="registro">
+   <div class="seccion-encabezado">
+    <div><p class="eyebrow">FORMULARIO</p><h2 id="tituloFormulario">Nuevo informe</h2></div>
+    <span class="nota-campos">* Campos obligatorios</span>
+   </div>
+   <form id="form">
+    <fieldset>
+     <legend>Identificación del informe</legend>
+     <div class="form-grid">
+      <div class="form-group"><label for="expediente">Expediente *</label><input id="expediente" name="expediente" required placeholder="Ej. 202600000000"></div>
+      <div class="form-group"><label for="empresa">Agente fiscalizado / empresa *</label><input id="empresa" name="empresa" required placeholder="Razón social"></div>
+      <div class="form-group"><label for="destinatario">Destinatario / Oficina Regional</label><input id="destinatario" placeholder="Ej. Oficina Regional Huánuco"></div>
+      <div class="form-group"><label for="empresaSupervisora">Empresa supervisora</label><input id="empresaSupervisora" placeholder="Razón social de la empresa supervisora"></div>
+      <div class="form-group"><label for="cartaLinea">Carta Línea N.º</label><input id="cartaLinea" name="cartaLinea" placeholder="Ej. 0000000-0"></div>
+      <div class="form-group"><label for="fechaInforme">Fecha de elaboración</label><input id="fechaInforme" name="fechaInforme" type="date"></div>
+      <div class="form-group"><label for="representanteLegal">Representante legal (opcional)</label><input id="representanteLegal" placeholder="Nombre para el bloque de firmas"></div>
+      <div class="form-group"><label for="dniRepresentante">DNI del representante (opcional)</label><input id="dniRepresentante" inputmode="numeric"></div>
+      <div class="form-group"><label for="cipInspector">CIP del fiscalizador (opcional)</label><input id="cipInspector"></div>
+     </div>
+    </fieldset>
+
+    <fieldset>
+     <legend>1. Objetivo</legend>
+     <label for="objetivo">Finalidad de la visita</label>
+     <textarea id="objetivo" name="objetivo" rows="4" placeholder="Indique qué obligaciones se verificaron y a qué unidad, agente o actividad corresponde la fiscalización."></textarea>
+    </fieldset>
+
+    <fieldset>
+     <legend>2. Antecedentes</legend>
+     <div class="form-grid">
+      <div class="form-group"><label for="fechaRegistro">Fecha de obtención del registro</label><input id="fechaRegistro" type="date"></div>
+      <div class="form-group"><label for="registroHidrocarburos">Registro de Hidrocarburos N.º</label><input id="registroHidrocarburos" placeholder="Ej. 00000-060-000000"></div>
+      <div class="form-group"><label for="resolucion">Resolución / mandato</label><input id="resolucion" placeholder="Número y órgano emisor"></div>
+      <div class="form-group"><label for="fechaResolucion">Fecha de resolución</label><input id="fechaResolucion" type="date"></div>
+      <div class="form-group"><label for="fechaComunicacion">Fecha de comunicación del agente</label><input id="fechaComunicacion" type="date"></div>
+      <div class="form-group"><label for="asignacion">Asignación / carta de servicio</label><input id="asignacion" placeholder="N.º de asignación y carta línea"></div>
+      <div class="form-group"><label for="fechaAsignacion">Fecha de asignación</label><input id="fechaAsignacion" type="date"></div>
+      <div class="form-group"><label for="supervisor">Especialista / supervisor responsable</label><input id="supervisor" placeholder="Nombre y cargo"></div>
+     </div>
+     <label for="antecedentes">Relato cronológico de antecedentes</label>
+     <textarea id="antecedentes" rows="7" placeholder="Describa los hechos previos en orden cronológico. Puede separar cada antecedente con una línea en blanco."></textarea>
+    </fieldset>
+
+    <fieldset>
+     <legend>3. Base legal</legend>
+     <label for="baseLegal">Normas y disposiciones aplicables</label>
+     <textarea id="baseLegal" rows="8" placeholder="Incluya las normas, artículos, disposiciones y modificatorias pertinentes. Verifique su vigencia antes de emitir el informe."></textarea>
+    </fieldset>
+
+    <fieldset>
+     <legend>4. Descripción general</legend>
+     <div class="form-grid">
+      <div class="form-group"><label for="placa">Placa principal</label><input id="placa" placeholder="Ej. ABC-000"></div>
+      <div class="form-group"><label for="placaTracto">Placa del tracto</label><input id="placaTracto" placeholder="Ej. XYZ-000"></div>
+      <div class="form-group"><label for="ruc">R.U.C.</label><input id="ruc" inputmode="numeric" placeholder="11 dígitos"></div>
+      <div class="form-group"><label for="actividad">Actividad autorizada</label><input id="actividad" placeholder="Ej. Transporte de combustibles líquidos y OPDH"></div>
+      <div class="form-group"><label for="capacidad">Capacidad autorizada</label><input id="capacidad" placeholder="Ej. 9000 galones"></div>
+      <div class="form-group"><label for="compartimientos">Número de compartimientos</label><input id="compartimientos" type="number" min="0" placeholder="Ej. 6"></div>
+      <div class="form-group"><label for="fechaConsulta">Fecha de consulta registral</label><input id="fechaConsulta" type="date"></div>
+      <div class="form-group"><label for="direccionLegal">Dirección legal</label><input id="direccionLegal" placeholder="Dirección declarada"></div>
+      <div class="form-group"><label for="distrito">Distrito</label><input id="distrito"></div>
+      <div class="form-group"><label for="provincia">Provincia</label><input id="provincia"></div>
+      <div class="form-group"><label for="departamento">Departamento</label><input id="departamento"></div>
+     </div>
+     <label for="descripcionGeneral">Información adicional de la unidad o del registro</label>
+     <textarea id="descripcionGeneral" rows="3" placeholder="Datos relevantes que no estén incluidos en los campos anteriores."></textarea>
+    </fieldset>
+
+    <fieldset>
+     <legend>5. Visita de fiscalización</legend>
+     <div class="form-grid">
+      <div class="form-group"><label for="fechaVisita">Fecha de visita</label><input id="fechaVisita" type="date"></div>
+      <div class="form-group"><label for="horaInicio">Hora de inicio</label><input id="horaInicio" type="time"></div>
+      <div class="form-group"><label for="horaFin">Hora de término</label><input id="horaFin" type="time"></div>
+      <div class="form-group"><label for="inspector">Inspector que realizó la visita</label><input id="inspector" placeholder="Nombre completo"></div>
+      <div class="form-group full-width"><label for="ubicacionVisita">Lugar de fiscalización</label><input id="ubicacionVisita" placeholder="Dirección, carretera, kilómetro, centro poblado, distrito y región"></div>
+      <div class="form-group"><label for="acta">Acta de fiscalización N.º</label><input id="acta" placeholder="Número o código de acta"></div>
+      <div class="form-group"><label for="receptor">Persona que recibió el acta</label><input id="receptor" placeholder="Nombre completo"></div>
+      <div class="form-group"><label for="dniReceptor">DNI</label><input id="dniReceptor" inputmode="numeric" placeholder="Documento de identidad"></div>
+      <div class="form-group"><label for="cargoReceptor">Calidad / cargo</label><input id="cargoReceptor" placeholder="Ej. encargado de la unidad"></div>
+     </div>
+     <div class="subseccion-encabezado">
+      <div><h3>Hechos constatados</h3><p>Registre cada observación con su sustento y medio probatorio.</p></div>
+      <button type="button" class="btn btn-secundario" id="agregarObservacion">+ Agregar observación</button>
+     </div>
+     <div id="observaciones" class="observaciones"></div>
+     <label for="analisis">Análisis de los hechos</label>
+     <textarea id="analisis" rows="5" placeholder="Desarrolle el análisis técnico de las verificaciones realizadas."></textarea>
+     <div class="toggle-descargo">
+      <label class="checkbox-label" for="tieneDescargo"><input type="checkbox" id="tieneDescargo"> Se presentaron descargos</label>
+     </div>
+     <div id="zonaDescargo" hidden>
+      <label for="descargos">Evaluación de los descargos</label>
+      <textarea id="descargos" rows="5" placeholder="Describa los descargos recibidos y evalúe su sustento."></textarea>
+     </div>
+    </fieldset>
+
+    <fieldset>
+     <legend>6. Anexos</legend>
+     <label for="anexos">Documentación recabada (un anexo por línea)</label>
+     <textarea id="anexos" rows="7" placeholder="Reporte de cierre&#10;Plan de contingencias&#10;Guía de remisión"></textarea>
+    </fieldset>
+
+    <fieldset>
+     <legend>7. Conclusiones</legend>
+     <label for="conclusiones">Conclusiones de la fiscalización</label>
+     <textarea id="conclusiones" rows="5" placeholder="Exponga conclusiones objetivas vinculadas con los hechos constatados y su sustento."></textarea>
+    </fieldset>
+
+    <fieldset>
+     <legend>8. Recomendaciones</legend>
+     <label for="recomendaciones">Acciones recomendadas</label>
+     <textarea id="recomendaciones" rows="5" placeholder="Indique las acciones propuestas, destinatario y finalidad."></textarea>
+     <div class="form-grid">
+      <div class="form-group"><label for="plazoSubsanacion">Plazo de subsanación</label><input id="plazoSubsanacion" placeholder="Ej. 30 días calendario"></div>
+      <div class="form-group"><label for="notaPlazo">Nota sobre el cómputo del plazo</label><input id="notaPlazo" placeholder="Indique desde cuándo se computa y la referencia aplicable"></div>
+     </div>
+    </fieldset>
+
+    <div class="acciones">
+     <button type="submit" class="btn btn-guardar" id="guardarInforme">Generar vista previa</button>
+     <button type="reset" class="btn btn-secundario">Limpiar formulario</button>
+    </div>
+   </form>
+  </section>
+
+  <section class="card" id="informes">
+   <div class="seccion-encabezado"><div><p class="eyebrow">ARCHIVO</p><h2>Informes registrados</h2></div></div>
+   <div id="lista" aria-live="polite">Cargando informes...</div>
+  </section>
+
+  <section class="card" id="vista-previa">
+   <div class="seccion-encabezado preview-toolbar">
+    <div><p class="eyebrow">DOCUMENTO</p><h2>Vista previa</h2></div>
+     <div class="acciones-documento">
+     <button type="button" class="btn btn-secundario" id="guardarBorrador" disabled>Guardar borrador</button>
+     <button type="button" class="btn btn-guardar" id="descargarWord" disabled>Confirmar y descargar Word</button>
+     <button type="button" class="btn btn-secundario" id="imprimir" disabled>Imprimir vista previa / guardar PDF</button>
+    </div>
+   </div>
+   <p id="estadoVistaPrevia" class="estado-vista-previa" aria-live="polite">Complete el formulario para generar la vista previa.</p>
+   <article id="vista" class="informe-preview" aria-live="polite">
+    <div class="preview-vacio"><strong>Aún no hay un informe seleccionado</strong><p>Complete el formulario y genere una vista previa para revisarlo antes de guardarlo.</p></div>
+   </article>
+  </section>
+ </main>
+ <footer><p>SISFIS · Sistema de Informes de Fiscalización</p><p>Herramienta académica. Verifique la normativa y los datos antes de cualquier uso oficial.</p></footer>
+ <script src="/vendor/jszip/jszip.min.js"></script>
+ <script src="/vendor/docx-preview/docx-preview.min.js"></script>
+ <script src="app-preview.js"></script>
+ <script src="plantilla-preview-word.js"></script>
+ <script src="flujo-decision.js"></script>
+</body>
+</html>
